@@ -1,5 +1,5 @@
 ## Is binary stack executable?
-`readelf -l <bin>`
+    # readelf -l <bin>
 
     Program Headers:
       Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align
@@ -11,7 +11,7 @@
       LOAD           0x000538 0x00010538 0x00010538 0x00120 0x00124 RW  0x8000
       DYNAMIC        0x000544 0x00010544 0x00010544 0x000e8 0x000e8 RW  0x4
       NOTE           0x000150 0x00008150 0x00008150 0x00020 0x00020 R   0x4
-      GNU_STACK      0x000000 0x00000000 0x00000000 0x00000 0x00000 __RW__  0x4
+      GNU_STACK      0x000000 0x00000000 0x00000000 0x00000 0x00000 RW  0x4
 
      Section to Segment mapping:
       Segment Sections...
