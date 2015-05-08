@@ -1,7 +1,7 @@
 # Is binary stack executable?
 readelf -l <bin>
 
-Program Headers:
+`Program Headers:
   Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align
   EXIDX          0x00052c 0x0000852c 0x0000852c 0x00008 0x00008 R   0x4
   PHDR           0x000034 0x00008034 0x00008034 0x00100 0x00100 R E 0x4
@@ -23,3 +23,4 @@ Program Headers:
    05     .dynamic
    06     .note.ABI-tag
    07
+`
