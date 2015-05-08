@@ -1,8 +1,26 @@
+## Kali for ARM
+
+    apt-get install build-essential gdb curl tree vim
+
+### python pip
+
+    wget https://bootstrap.pypa.io/get-pip.py
+
+### Capstone and ROPgadget
+
+    pip install capstone
+    pip install ropgadget
+
+
 ## Is binary stack executable?
 
 The flag on the GNU_STACK line will show if it has execute permissions
 
     # readelf -l <bin>
+
+    Elf file type is EXEC (Executable file)
+    Entry point 0x82fc
+    There are 8 program headers, starting at offset 52
 
     Program Headers:
       Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align
@@ -28,3 +46,7 @@ The flag on the GNU_STACK line will show if it has execute permissions
        07
 
 
+## Is binary compiled with PIE?
+
+1. Check if binary is executable and not a library: PHDR is present
+2. Elf file type should be: DYN
