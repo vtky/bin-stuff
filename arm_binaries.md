@@ -1,4 +1,7 @@
 ## Is binary stack executable?
+
+The flag on the GNU_STACK line will show if it has execute permissions
+
     # readelf -l <bin>
 
     Program Headers:
@@ -23,3 +26,5 @@
        05     .dynamic
        06     .note.ABI-tag
        07
+
+
