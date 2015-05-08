@@ -1,6 +1,6 @@
 ## Kali for ARM
 
-    apt-get install build-essential gdb curl tree vim
+    apt-get install build-essential gdb curl tree vim mlocate
 
 ### python pip
 
