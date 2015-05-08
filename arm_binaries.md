@@ -50,3 +50,4 @@ The flag on the GNU_STACK line will show if it has execute permissions
 
 1. Check if binary is executable and not a library: PHDR is present
 2. Elf file type should be: DYN
+
