@@ -51,3 +51,25 @@ The flag on the GNU_STACK line will show if it has execute permissions
 1. Check if binary is executable and not a library: PHDR is present
 2. Elf file type should be: DYN
 
+
+### Generating PIE binary
+
+    gcc -o PIEdemo -fpie -fPIE -pie PIEdemo.c
+
+    -fpic
+        Generate position-independent code (PIC) suitable for use in a shared library, if supported for the target machine. Such code accesses all constant addresses through a global offset table (GOT). The dynamic loader resolves the GOT entries when the program starts (the dynamic loader is not part of GCC; it is part of the operating system). If the GOT size for the linked executable exceeds a machine-specific maximum size, you get an error message from the linker indicating that -fpic does not work; in that case, recompile with -fPIC instead. (These maximums are 8k on the SPARC and 32k on the m68k and RS/6000. The x86 has no such limit.)
+
+        Position-independent code requires special support, and therefore works only on certain machines. For the x86, GCC supports PIC for System V but not for the Sun 386i. Code generated for the IBM RS/6000 is always position-independent.
+
+        When this flag is set, the macros __pic__ and __PIC__ are defined to 1.
+    -fPIC
+        If supported for the target machine, emit position-independent code, suitable for dynamic linking and avoiding any limit on the size of the global offset table. This option makes a difference on the m68k, PowerPC and SPARC.
+
+        Position-independent code requires special support, and therefore works only on certain machines.
+
+        When this flag is set, the macros __pic__ and __PIC__ are defined to 2.
+    -fpie
+    -fPIE
+        These options are similar to -fpic and -fPIC, but generated position independent code can be only linked into executables. Usually these options are used when -pie GCC option is used during linking.
+
+        -fpie and -fPIE both define the macros __pie__ and __PIE__. The macros have the value 1 for -fpie and 2 for -fPIE.

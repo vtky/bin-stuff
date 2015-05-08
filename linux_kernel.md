@@ -10,3 +10,11 @@ Randomize the positions of the stack, virtual dynamic shared object (VDSO) page,
 
 __2__
 Randomize the positions of the stack, VDSO page, shared memory regions, and the data segment. This is the default setting.
+
+### Change ASLR
+
+Disable
+	echo 0 | sudo tee /proc/sys/kernel/randomize_va_space
+
+Enable
+	echo 2 | sudo tee /proc/sys/kernel/randomize_va_space
